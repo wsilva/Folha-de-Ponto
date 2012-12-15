@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+
 from django.db import models
 
-# Create your models here.
+class RegistroPonto(models.Model):
+
+    # datahora = models.DateTimeField()
+    dia = models.DateField()
+    hora = models.TimeField()
+    tipo = models.CharField(max_length=100)
+    imagem = models.CharField(max_length=100)
+
