@@ -10,3 +10,7 @@ class RegistroPonto(models.Model):
     tipo = models.CharField(max_length=100)
     imagem = models.CharField(max_length=100)
 
+    # para mudar o nome da tabela
+    # class Meta:
+        # db_table = "tbl_registro_ponto"
+
