@@ -1,0 +1,46 @@
+<html>
+    <head>
+        {% block cabecalho %}
+            <title>Registro de Ponto</title>
+        {% endblock %}
+    </head>
+
+    <body>
+
+        <div id="header">
+            <div id="logo">
+                Logotipo aqui
+            </div>
+            <div id="titulo">
+                <h1>Registro de Ponto</h1>
+            </div>
+        </div>
+
+        <div id="content">
+
+            <div id="miolo">
+                {% block corpo %}
+                    <!-- corpo -->
+                {% endblock %}
+            </div>
+
+            <div id="boxes">
+                <div class="box">
+                    <h2>Caixa 1</h2>
+                    <p>Conteudo do caixa 1</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="footer">
+
+            <div id="footer-content">
+                Rodapé vai aqui
+            </div>
+
+        </div>
+
+    </body>
+
+</html>

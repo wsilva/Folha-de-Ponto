@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block corpo %}
+    <a href="/novo/">Novo Registro</a>
+    <ul>
+        {% for registro in lista_registros %}
+            <li>
+                <a href="/registro/{{ registro.id }}">
+                    {{ registro.dia|date:'d/m/Y'}} - {{ registro.hora }} ({{ registro.tipo }})
+                </a>
+            </li>
+        {% empty %}
+            <li>Sem itens na lista</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
