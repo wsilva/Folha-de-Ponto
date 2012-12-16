@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 
 {% block corpo %}
-<p><a href="/logout/">Logout</a></p>
-    <a href="/novoregistro/">Novo Registro</a>
+<p>
+    <li><a href="/logout/">Logout</a></li>
+    <li><a href="/novoregistro/">Novo Registro</a></li>
+</p>
     <ul>
         {% for registro in lista_registros %}
             <li>

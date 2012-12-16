@@ -11,7 +11,7 @@ class RegistroPonto(models.Model):
     tipo = models.CharField(max_length=100)
     imagem = models.CharField(max_length=100)
 
-    # usuario = models.ForeignKey(User)
+    usuario = models.ForeignKey(User)
 
     # para mudar o nome da tabela
     # class Meta:

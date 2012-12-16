@@ -57,6 +57,8 @@ MEDIA_ROOT = os.path.join(ROOTDIR, 'media')
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
 MEDIA_URL = '/media/'
 
+# ADMIN_MEDIA_PREFIX = '/media_admin/'
+
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
@@ -156,3 +158,8 @@ LOGGING = {
         },
     }
 }
+
+
+LOGIN_URL = "/login/"
+LOGOUT_URL = "/logout/"
+LOGIN_REDIRECT_URL = "/"
