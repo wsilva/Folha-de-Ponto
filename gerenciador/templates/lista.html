@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 
 {% block corpo %}
+<p><a href="/logout/">Logout</a></p>
     <a href="/novoregistro/">Novo Registro</a>
     <ul>
         {% for registro in lista_registros %}
             <li>
-                <a href="/removeregistro/{{ registro.id }}">
-                    <img src="/media/imagens/lixeira.png" />
+                <a href="/removeregistro/{{ registro.id }}/">
+                    <img src="{{ MEDIA_URL }}imagens/lixeira.png" />
                 </a>
-                <a href="/registro/{{ registro.id }}">
+                <a href="/registro/{{ registro.id }}/">
                     {{ registro.dia|date:'d/m/Y'}} - {{ registro.hora }} ({{ registro.tipo }})
                 </a>
             </li>

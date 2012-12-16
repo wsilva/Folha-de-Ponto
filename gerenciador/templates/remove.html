@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block corpo %}
+
+    <h2>Remover</h2>
+    <p>{{ registro.dia }} - {{ registro.hora }} ({{ registro.tipo }})</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        <button type="submit">Remover</button>
+        ou
+        <a href="/registros/">Cancelar</a>
+    </form>
+
+{% endblock %}

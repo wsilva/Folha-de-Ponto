@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.db import models
+from django.contrib.auth.models import User
 
 class RegistroPonto(models.Model):
 
@@ -9,6 +10,8 @@ class RegistroPonto(models.Model):
     hora = models.TimeField()
     tipo = models.CharField(max_length=100)
     imagem = models.CharField(max_length=100)
+
+    # usuario = models.ForeignKey(User)
 
     # para mudar o nome da tabela
     # class Meta:

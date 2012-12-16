@@ -10,13 +10,16 @@ from models import RegistroPonto
 
 from forms import FormRegistroPonto
 
+# @login_required
 def home(request):
     return HttpResponse(u"Esta é a página inicial!")
 
+# @login_required
 def lista(request):
     lista_registros = RegistroPonto.objects.all()
-    return render_to_response("lista.html", {'lista_registros':lista_registros})
+    return render_to_response("lista.html", {'lista_registros':lista_registros}, context_instance=RequestContext(request))
 
+# @login_required
 def novo(request):
     if request.method == 'POST':
         form = FormRegistroPonto(request.POST, request.FILES)
@@ -37,6 +40,7 @@ def novo(request):
 
     return render_to_response("novoregistro.html",{'form':form}, context_instance=RequestContext(request))
 
+# @login_required
 def editar(request, id_registro):
     # try:
     #     registro = RegistroPonto.objects.get(pk=id_registro)
@@ -54,5 +58,12 @@ def editar(request, id_registro):
         form=FormRegistroPonto(instance=registro)
 
     return render_to_response("editar.html",{'form':form}, context_instance=RequestContext(request))
+
+def remover(request, id_registro):
+    registro = get_object_or_404(RegistroPonto, pk=id_registro)
+    if request.method == 'POST':
+        registro.delete()
+        return render_to_response("removido.html", {})
+    return render_to_response("remove.html", {"registro":registro}, context_instance = RequestContext(request))
 
 
