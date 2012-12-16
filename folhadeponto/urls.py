@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     url(r'^$', 'gerenciador.views.home', name='home'),
     url(r'^registros/$', 'gerenciador.views.lista', name='lista'),
     url(r'^novoregistro/$', 'gerenciador.views.novo', name='novo'),
+    url(r'^registro/(?P<id_registro>\d+)/$', 'gerenciador.views.editar', name='editar'),
     # url(r'^folhadeponto/', include('folhadeponto.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

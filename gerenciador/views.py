@@ -2,7 +2,9 @@
 
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
+from django.shortcuts import get_object_or_404
 from django.template import RequestContext
+from django.http import Http404
 
 from models import RegistroPonto
 
@@ -34,3 +36,23 @@ def novo(request):
         form = FormRegistroPonto()
 
     return render_to_response("novoregistro.html",{'form':form}, context_instance=RequestContext(request))
+
+def editar(request, id_registro):
+    # try:
+    #     registro = RegistroPonto.objects.get(pk=id_registro)
+    # except RegistroPonto.DoesNotExist:
+    #     raise Http404()
+
+    # return render_to_response()
+    registro = get_object_or_404(RegistroPonto, pk=id_registro)
+    if request.method == "POST":
+        form = FormRegistroPonto(request.POST, request.FILES, instance=registro)
+        if form.is_valid():
+            form.save()
+            return render_to_response("gravado.html",{})
+    else:
+        form=FormRegistroPonto(instance=registro)
+
+    return render_to_response("editar.html",{'form':form}, context_instance=RequestContext(request))
+
+
