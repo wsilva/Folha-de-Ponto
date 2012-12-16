@@ -13,6 +13,9 @@ class RegistroPonto(models.Model):
 
     usuario = models.ForeignKey(User)
 
+    def __unicode__(self):
+        return u"%s - %s %s" % (self.dia, self.hora, self.tipo)
+
     # para mudar o nome da tabela
     # class Meta:
         # db_table = "tbl_registro_ponto"
