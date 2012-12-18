@@ -3,13 +3,15 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from thumbs import ImageWithThumbsField
+
 class RegistroPonto(models.Model):
 
     # datahora = models.DateTimeField()
     dia = models.DateField()
     hora = models.TimeField()
     tipo = models.CharField(max_length=100)
-    imagem = models.CharField(max_length=100)
+    imagem = ImageWithThumbsField(upload_to='comprovantes', sizes=((200,150),))
 
     usuario = models.ForeignKey(User)
 
