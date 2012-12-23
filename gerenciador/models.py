@@ -10,7 +10,15 @@ class RegistroPonto(models.Model):
     # datahora = models.DateTimeField()
     dia = models.DateField()
     hora = models.TimeField()
-    tipo = models.CharField(max_length=100)
+
+    TIPOS = (
+        ('ent', 'Entrada'),
+        ('sa', 'Saída para almoço'),
+        ('va', 'Volta do almoço'),
+        ('sai', 'Saída'),
+    )
+    tipo = models.CharField(max_length=3, choices=TIPOS)
+
     imagem = ImageWithThumbsField(upload_to='comprovantes', sizes=((200,150),))
 
     usuario = models.ForeignKey(User)
