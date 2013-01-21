@@ -26,7 +26,7 @@
                 &nbsp;                
             </div>
             <div id="titulo">
-                <h1>FDP - Folha de Ponto</h1>
+                <h1><a href="/">FDP - Folha de Ponto</a></h1>
             </div>
         </div>
 
@@ -39,10 +39,13 @@
             </div>
 
             <div id="boxes">
-                <div class="box">
-                    <h2>Caixa 1</h2>
-                    <p>Conteudo do caixa 1</p>
-                </div>
+                {% block caixas %}
+                    <div class="box">
+                        <!-- caixas -->
+                        <h2>Caixa 1</h2>
+                        <p>Conteudo do caixa 1</p>
+                    </div>
+                {% endblock %}
             </div>
 
         </div>
@@ -50,7 +53,7 @@
         <div id="footer">
 
             <div id="footer-content">
-                Rodapé vai aqui
+                by @_wsilva
             </div>
 
         </div>

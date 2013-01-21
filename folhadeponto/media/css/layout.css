@@ -18,7 +18,6 @@ body
     left: 0;
     width: 100%;
     z-index: 1030;
-
 }
 
 #logo
@@ -30,12 +29,18 @@ body
     margin: 2px;
 }
 
-#titulo
+#titulo a
 {
     float: left;
     /*border: 1px solid yellow;*/
-    color: #EEE;
+    color: #DDD;
     margin: 6px 3px 6px 20px;
+    text-decoration: none;
+}
+
+#titulo a:hover
+{
+    color: $FFF;
 }
 
 #content
@@ -45,4 +50,19 @@ body
     margin-right: auto;
     height: 100%;
     /*border: 1px solid green;*/
+}
+
+#footer
+{
+    color: #FFF;
+    background-color: #666;
+    border-top: 1px solid #FFF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+#footer-content
+{
+    padding: 10px 5px;
+    text-align: center;
+    font-weight: bold;
 }

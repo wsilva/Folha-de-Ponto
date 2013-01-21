@@ -11,7 +11,8 @@ from forms import FormRegistroPonto
 
 @login_required
 def home(request):
-    return HttpResponse(u"Esta é a página inicial!")
+    # return HttpResponse(u"Esta é a página inicial!")
+    return render_to_response("inicial.html", context_instance=RequestContext(request))
 
 @login_required
 def lista(request):
