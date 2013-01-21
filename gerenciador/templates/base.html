@@ -1,18 +1,32 @@
 <html>
     <head>
-        {% block cabecalho %}
-            <title>Registro de Ponto</title>
+        {% block titulo %}
+            <title>FDP - Folha de Ponto</title>
         {% endblock %}
+
+        {% block meta %}
+            <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+            <meta http-equiv="Content-Language" content="pt-br" />
+            <meta name="keywords" content="Folha de Ponto, wsilva, Python, Django" />
+            <meta name="description" content="Sistema de registro de ponto simples par agerenciamento pessoal do @_wsilva." />
+        {% endblock meta %}
+
+        {% block style %}
+            <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/layout.css"/>
+        {% endblock style %}
+
+        {% block scripts %}
+        {% endblock scripts %}
     </head>
 
     <body>
 
         <div id="header">
             <div id="logo">
-                Logotipo aqui
+                &nbsp;                
             </div>
             <div id="titulo">
-                <h1>Registro de Ponto</h1>
+                <h1>FDP - Folha de Ponto</h1>
             </div>
         </div>
 
