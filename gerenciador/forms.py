@@ -19,7 +19,7 @@ class FormRegistroPonto(forms.ModelForm):
         widget=forms.DateInput(format='%d/%m/%Y'),
         input_formats=['%d/%m/%Y', '%d/%m/%y']
         )
-    imagem = forms.ImageField()
+    imagem = forms.ImageField(required=False)
     class Meta:
         model = RegistroPonto
         fields = ('dia', 'hora', 'tipo', 'imagem')
